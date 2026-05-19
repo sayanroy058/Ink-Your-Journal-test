@@ -11,6 +11,8 @@ import Research from "./pages/Research";
 import EditorialBoard from "./pages/EditorialBoard";
 import Contact from "./pages/Contact";
 import SubmitPaper from "./pages/SubmitPaper";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -40,6 +42,8 @@ const App = () => (
           <Route path="/editorial-board" element={<EditorialBoard />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/submit" element={<SubmitPaper />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
