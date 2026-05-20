@@ -537,7 +537,7 @@ const Journal = () => {
               <span className="text-xs font-bold tracking-widest uppercase text-primary mb-3 block">Archive</span>
               <h2 className="text-3xl font-extrabold text-slate-900">Volumes & Issues</h2>
             </motion.div>
-            {/* <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               {volumes.map((v, i) => (
                 <motion.div
                   key={v.vol}
@@ -557,8 +557,8 @@ const Journal = () => {
                   <ArrowRight size={16} className="text-slate-300 group-hover:text-primary transition-colors" />
                 </motion.div>
               ))}
-            </div> */}
-             <motion.div
+            </div>
+             {/* <motion.div
             initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -580,7 +580,7 @@ const Journal = () => {
                 Our first peer-reviewed publications are being prepared for release.
               </p>
             </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </section>
       )}
