@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import type { FormEvent } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   BookOpen,
   CheckCircle2,
@@ -15,6 +17,13 @@ import {
 } from "lucide-react";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -86,7 +95,7 @@ const Login = () => {
                   </div>
                 </div>
 
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleLogin}>
                   <div>
                     <label className="mb-1.5 block text-sm font-semibold text-slate-700">Email Address</label>
                     <div className="relative">
@@ -125,6 +134,12 @@ const Login = () => {
                   >
                     <UserRound size={17} /> Login
                   </button>
+                  <p className="text-center text-sm text-slate-500">
+                    Don&apos;t have an account?{" "}
+                    <Link to="/register" className="font-bold text-primary hover:text-primary/80">
+                      Register now
+                    </Link>
+                  </p>
                 </form>
               </motion.div>
             </div>

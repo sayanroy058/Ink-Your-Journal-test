@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   BadgeCheck,
   BookOpenCheck,
@@ -145,6 +146,12 @@ const Register = () => {
                     >
                       <UserPlus size={17} /> Register User Account
                     </button>
+                    <p className="text-center text-sm text-slate-500">
+                      Already have an account?{" "}
+                      <Link to="/login" className="font-bold text-primary hover:text-primary/80">
+                        Login
+                      </Link>
+                    </p>
                   </form>
                 </div>
               </motion.div>
