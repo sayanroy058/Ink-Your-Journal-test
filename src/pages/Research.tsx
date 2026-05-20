@@ -9,9 +9,9 @@ import flowchartImg from "@/assets/flowchart.png";
 import figImg from "@/assets/fig.jpeg";
 
 const journalStats = [
-  { label: "CiteScore", value: "8.2" },
-  { label: "Impact Factor", value: "4.5" },
-  { label: "Citations", value: "12K+" },
+  { label: "CiteScore", value: "0" },
+  { label: "Impact Factor", value: "0" },
+  { label: "Citations", value: "0" },
 ];
 
 const publishedArticles = [
@@ -178,7 +178,7 @@ const Research = () => {
             <div className="grid sm:grid-cols-3 gap-6 mb-8">
               {[
                 { icon: BookOpen, label: "Open Access", desc: "All articles freely available to readers worldwide" },
-                { icon: Users, label: "Global Authors", desc: "Contributions from 30+ countries" },
+                { icon: Users, label: "Global Authors", desc: "Contributions from 0 countries" },
                 { icon: TrendingUp, label: "Growing Impact", desc: "Steadily rising citation metrics" },
               ].map((item, i) => (
                 <div key={item.label} className="flex items-start gap-3 bg-card rounded-xl p-4 border border-border card-shadow">

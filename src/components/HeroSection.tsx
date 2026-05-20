@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import heroImg from "@/assets/hero-biology.jpg";
 
 const highlights = [
-  { icon: Award, label: "Impact Factor 4.5" },
+  { icon: Award, label: "Impact Factor 0" },
   { icon: BookOpen, label: "Open Access" },
   { icon: Microscope, label: "Peer Reviewed" },
-  { icon: Globe, label: "30+ Countries" },
+  { icon: Globe, label: "0 Countries" },
 ];
 
 const HeroSection = () => {
@@ -103,9 +103,9 @@ const HeroSection = () => {
             className="flex flex-wrap gap-4 mt-16"
           >
             {[
-              { value: "8.2", label: "CiteScore" },
-              { value: "4.5", label: "Impact Factor" },
-              { value: "12K+", label: "Citations" },
+              { value: "0", label: "CiteScore" },
+              { value: "0", label: "Impact Factor" },
+              { value: "0", label: "Citations" },
             ].map((s) => (
               <div key={s.label} className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl px-6 py-4 text-center">
                 <div className="text-2xl font-extrabold text-white">{s.value}</div>

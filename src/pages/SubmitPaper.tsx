@@ -73,9 +73,9 @@ const SubmitPaper = () => {
         <div className="container mx-auto mt-14 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
-              { val: "4–6 wks", label: "Average Review Time" },
-              { val: "2 wks", label: "Post-Acceptance Publication" },
-              { val: "12K+", label: "Global Citations" },
+              { val: "0", label: "Average Review Time" },
+              { val: "0", label: "Post-Acceptance Publication" },
+              { val: "0", label: "Global Citations" },
               { val: "Free", label: "APC Waivers Available" },
             ].map((s) => (
               <div key={s.label} className="text-center bg-white/[0.07] border border-white/10 rounded-2xl py-4 px-3">

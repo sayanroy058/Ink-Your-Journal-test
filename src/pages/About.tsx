@@ -9,12 +9,12 @@ import {
 } from "lucide-react";
 
 const stats = [
-  { value: "8.2", label: "CiteScore", sub: "Top 10% globally" },
-  { value: "4.5", label: "Impact Factor", sub: "Rising year-on-year" },
-  { value: "12K+", label: "Citations", sub: "Across disciplines" },
-  { value: "30+", label: "Countries", sub: "Author representation" },
-  { value: "150+", label: "Articles", sub: "Published annually" },
-  { value: "4-6 wks", label: "Review Time", sub: "Fast turnaround" },
+  { value: "0", label: "CiteScore", sub: "Top 10% globally" },
+  { value: "0", label: "Impact Factor", sub: "Rising year-on-year" },
+  { value: "0", label: "Citations", sub: "Across disciplines" },
+  { value: "0", label: "Countries", sub: "Author representation" },
+  { value: "0", label: "Articles", sub: "Published annually" },
+  { value: "0", label: "Review Time", sub: "Fast turnaround" },
 ];
 
 const values = [
@@ -39,10 +39,10 @@ const milestones = [
   { year: "2018", event: "Journal founded with a mission to democratize biological sciences publishing" },
   { year: "2019", event: "First 50 articles published; indexed in major scientific databases" },
   { year: "2020", event: "Achieved full open-access model, removing paywalls for global readers" },
-  { year: "2021", event: "Impact Factor awarded; reached 5,000 citation milestone" },
-  { year: "2022", event: "Expanded editorial board to 20+ global experts across 15 countries" },
-  { year: "2023", event: "CiteScore reached 8.2; partnered with 30+ research institutions worldwide" },
-  { year: "2024", event: "Launched rapid-review track; 12K+ citations and growing" },
+  { year: "2021", event: "Impact Factor awarded; reached 0 citation milestone" },
+  { year: "2022", event: "Expanded editorial board to 0 global experts across 0 countries" },
+  { year: "2023", event: "CiteScore reached 0; partnered with 0 research institutions worldwide" },
+  { year: "2024", event: "Launched rapid-review track; 0 citations and growing" },
 ];
 
 const About = () => {

@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { BookOpen, Users, Globe, Award } from "lucide-react";
 
 const stats = [
-  { icon: BookOpen, value: "500+", label: "Published Papers" },
-  { icon: Users, value: "200+", label: "Researchers" },
-  { icon: Globe, value: "30+", label: "Countries" },
+  { icon: BookOpen, value: "0", label: "Published Papers" },
+  { icon: Users, value: "0", label: "Researchers" },
+  { icon: Globe, value: "0", label: "Countries" },
   { icon: Award, value: "Peer", label: "Reviewed" },
 ];
 

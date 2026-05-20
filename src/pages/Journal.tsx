@@ -12,10 +12,10 @@ import {
 import mockupImg from "@/assets/life-science-mockup.png";
 
 const journalStats = [
-  { label: "CiteScore", value: "8.2", icon: Star, color: "from-amber-400 to-orange-500" },
-  { label: "Impact Factor", value: "4.5", icon: TrendingUp, color: "from-emerald-400 to-teal-500" },
-  { label: "Total Citations", value: "12K+", icon: BookOpen, color: "from-blue-400 to-indigo-500" },
-  { label: "Global Authors", value: "800+", icon: Users, color: "from-purple-400 to-pink-500" },
+  { label: "CiteScore", value: "0", icon: Star, color: "from-amber-400 to-orange-500" },
+  { label: "Impact Factor", value: "0", icon: TrendingUp, color: "from-emerald-400 to-teal-500" },
+  { label: "Total Citations", value: "0", icon: BookOpen, color: "from-blue-400 to-indigo-500" },
+  { label: "Global Authors", value: "0", icon: Users, color: "from-purple-400 to-pink-500" },
 ];
 
 const publishedArticles = [
@@ -348,19 +348,19 @@ const Journal = () => {
               {/* Metrics */}
               <div className="grid md:grid-cols-3 gap-6">
                 <div className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
-                  <div className="text-3xl font-extrabold text-primary mb-1">8.2</div>
+                  <div className="text-3xl font-extrabold text-primary mb-1">0</div>
                   <p className="text-sm font-semibold text-slate-600">CiteScore</p>
                   <p className="text-xs text-slate-400 mt-1">2025 Scopus Metrics</p>
                 </div>
                 <div className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
-                  <div className="text-3xl font-extrabold text-primary mb-1">4.5</div>
+                  <div className="text-3xl font-extrabold text-primary mb-1">0</div>
                   <p className="text-sm font-semibold text-slate-600">Impact Factor</p>
                   <p className="text-xs text-slate-400 mt-1">2025 JCR</p>
                 </div>
                 <div className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
-                  <div className="text-3xl font-extrabold text-primary mb-1">800+</div>
+                  <div className="text-3xl font-extrabold text-primary mb-1">0</div>
                   <p className="text-sm font-semibold text-slate-600">Published Authors</p>
-                  <p className="text-xs text-slate-400 mt-1">From 120+ countries</p>
+                  <p className="text-xs text-slate-400 mt-1">From 0 countries</p>
                 </div>
               </div>
 
