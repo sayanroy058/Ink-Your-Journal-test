@@ -70,7 +70,7 @@ const AdvisorySection = () => {
                 src={advisor.image}
                 alt={advisor.name}
                 loading="lazy"
-                className="w-24 h-24 rounded-full mx-auto mb-5 object-cover border-4 border-secondary"
+                className="w-24 h-24 rounded-full mx-auto mb-5 object-cover border-4 border-emerald-500/30"
               />
               <h3 className="text-lg font-bold text-foreground mb-1">{advisor.name}</h3>
               <p className="text-sm font-medium text-primary mb-1">{advisor.role}</p>

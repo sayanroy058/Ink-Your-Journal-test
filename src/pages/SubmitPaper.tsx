@@ -24,8 +24,8 @@ const requirements = [
 ];
 
 const fees = [
-  { region: "High-Income Countries", apc: "₹10,000 INR", note: "Standard APC" },
-  { region: "Middle-Income Countries", apc: "₹50,00 INR", note: "50% discount available" },
+  { region: "High-Income Countries", apc: "₹00.00 INR", note: "Standard APC" },
+  { region: "Middle-Income Countries", apc: "₹00.00 INR", note: "50% discount available" },
   { region: "Low-Income Countries", apc: "Waiver", note: "Full waiver on application" },
 ];
 
