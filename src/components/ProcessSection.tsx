@@ -42,7 +42,7 @@ const ProcessSection = () => {
             Publication Process
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            A transparent, efficient pathway from submission to publication.
+            A transparent, efficient pathway from submission to publication
           </p>
         </motion.div>
 

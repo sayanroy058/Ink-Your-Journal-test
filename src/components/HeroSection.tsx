@@ -38,7 +38,7 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <motion.span
+            {/* <motion.span
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
@@ -46,7 +46,7 @@ const HeroSection = () => {
             >
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               Biological Sciences Journal
-            </motion.span>
+            </motion.span> */}
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.08] mb-6">
               Advancing Research{" "}

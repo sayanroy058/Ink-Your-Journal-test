@@ -202,7 +202,7 @@ const SubmitPaper = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://editorialmanager.com"
+                href="/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-xl font-bold hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/30"

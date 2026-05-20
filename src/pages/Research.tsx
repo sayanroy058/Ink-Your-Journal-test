@@ -208,9 +208,9 @@ const Research = () => {
             />
             <div>
               <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Editor-in-Chief</div>
-              <h3 className="text-lg font-bold text-foreground">Dr. Sarah Mitchell, PhD</h3>
-              <p className="text-sm text-muted-foreground">Department of Biological Sciences</p>
-              <p className="text-sm text-muted-foreground">Global Research Institute</p>
+              <h3 className="text-lg font-bold text-foreground">Prof. (Dr.) Pradeep Kr. Das Mohapatra</h3>
+              <p className="text-sm text-muted-foreground">Professor, Dean of Science, HOD | Dept. of Microbiology</p>
+              <p className="text-sm text-muted-foreground">Raiganj University, Uttar Dinajpur, WB, India</p>
               <p className="text-xs text-primary mt-1">Excellence in Innovation Research, 2020-2025</p>
             </div>
           </motion.div>

@@ -1,24 +1,36 @@
 import { motion } from "framer-motion";
 import figImg from "@/assets/fig.jpeg";
+import kiratImg from "@/assets/Advisor Forum/Kirat Kumar Ganguly.jpeg";
+import pradeepImg from "@/assets/Advisor Forum/Pradeep Kumar Das (Chief Editor).jpeg";
+import koushikImg from "@/assets/Advisor Forum/Koushik Mukherjee (Asst. Editor).jpeg";
 
 const advisors = [
   {
-    name: "Dr. Sarah Mitchell",
-    role: "Biochemistry Expert",
-    institution: "Harvard Medical School",
-    image: figImg,
+    name: "Dr. Kirat Kumar Ganguly",
+    role: "Chief Advisor",
+    Designation: "Assistant Professor",
+    Department: "HOD, Microbiology",
+    institution: "Michael Madhusudan Memorial College",
+    Address: "Kabiguru Sarani, City Centre Durgapur, West Bengal, India",
+    image: kiratImg,
   },
   {
-    name: "Prof. James Chen",
-    role: "Neuroscience Researcher",
-    institution: "MIT Department of Biology",
-    image: figImg,
+    name: "Prof. (Dr.) Pradeep Kr. Das Mohapatra",
+    role: "Chief Editor",
+    Designation: "Professor",
+    Department: "Dean of Science, HOD | Dept. of Microbiology",
+    institution: "Raiganj University",
+    Address: "Uttar Dinajpur, West Bengal, India",
+    image: pradeepImg,
   },
   {
-    name: "Dr. Maria Gonzalez",
-    role: "Biotechnology Specialist",
-    institution: "Stanford University",
-    image: figImg,
+    name: "Dr. Koushik Mukherjee",
+    role: "Assistant Editor",
+    Designation: "Assistant Professor",
+    Department: "HOD | Dept. of Microbiology",
+    institution: "Kalyani Mahavidyalaya",
+    Address: "West Bengal, India",
+    image: koushikImg,
   },
 ];
 
@@ -40,7 +52,7 @@ const AdvisorySection = () => {
             Advisory Forum
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Our distinguished advisory board ensures the highest standards of research integrity and academic excellence.
+            Our distinguished advisory board ensures the highest standards of research integrity and academic excellence
           </p>
         </motion.div>
 
@@ -62,7 +74,10 @@ const AdvisorySection = () => {
               />
               <h3 className="text-lg font-bold text-foreground mb-1">{advisor.name}</h3>
               <p className="text-sm font-medium text-primary mb-1">{advisor.role}</p>
+              <p className="text-sm text-muted-foreground mb-1">{advisor.Designation}</p>
+              <p className="text-sm text-muted-foreground mb-1">{advisor.Department}</p>
               <p className="text-xs text-muted-foreground">{advisor.institution}</p>
+              <p className="text-xs text-muted-foreground mt-2">{advisor.Address}</p>
             </motion.div>
           ))}
         </div>

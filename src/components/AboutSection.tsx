@@ -26,7 +26,7 @@ const AboutSection = () => {
             Welcome to Ink Your Journal
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We provide innovative research article publication services in the field of Biological Sciences. Our platform connects researchers worldwide, ensuring rigorous peer review and global accessibility.
+            We provide innovative research article publication services in the field of Biological Sciences. Our platform connects researchers worldwide, ensuring rigorous peer review and global accessibility
           </p>
         </motion.div>
 

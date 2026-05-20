@@ -70,12 +70,21 @@ const Navbar = () => {
           })}
         </div>
 
-        <div className="hidden lg:flex items-center gap-3">
+        {/* <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/submit"
             className="bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25 active:scale-95"
           >
             Submit Paper
+          </Link>
+        </div> */}
+
+        <div className="hidden lg:flex items-center gap-3">
+          <Link
+            to="/login"
+            className="bg-primary text-white px-5 py-2.5 rounded-xl text-sm font-bold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25 active:scale-95"
+          >
+            Login
           </Link>
         </div>
 

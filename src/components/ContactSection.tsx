@@ -29,7 +29,7 @@ const ContactSection = () => {
             Contact Us
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Have questions about submission or publication? We're here to help.
+            Have questions about submission or publication? We're here to help
           </p>
         </motion.div>
 

@@ -394,7 +394,7 @@ const EditorialBoard = () => {
               Peer Review Standards
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Our rigorous peer-review process ensures only the highest quality research is published.
+              Our rigorous peer-review process ensures only the highest quality research is published
             </p>
           </motion.div>
 

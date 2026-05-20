@@ -51,7 +51,7 @@ const JournalSection = () => {
             Biological Sciences Journal
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Discover cutting-edge research across diverse biological disciplines. Our journal publishes high-quality, peer-reviewed articles from leading researchers worldwide.
+            Discover cutting-edge research across diverse biological disciplines. Our journal publishes high-quality, peer-reviewed articles from leading researchers worldwide
           </p>
         </motion.div>
 
