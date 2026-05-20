@@ -56,7 +56,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-4 max-w-2xl">
-              A premier open-access, peer-reviewed journal publishing breakthrough research across Healthcare, Pharmacy, Biochemistry, Biotechnology, Neuroscience and Environmental Biology.
+              A premier open-access, peer-reviewed journal publishing breakthrough research across Healthcare, Pharmacy, Biochemistry, Biotechnology, Neuroscience and Environmental Biology
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">

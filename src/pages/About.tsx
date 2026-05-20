@@ -66,7 +66,7 @@ const About = () => {
               </span>
             </h1>
             <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
-              The Biological Sciences Journal is a leading peer-reviewed, open-access publication dedicated to advancing research across the full spectrum of life sciences and pharmacy.
+              The Biological Sciences Journal is a leading peer-reviewed, open-access publication dedicated to advancing research across the full spectrum of life sciences and pharmacy
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/journal" className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl font-bold hover:bg-primary/90 transition-all hover:shadow-xl hover:shadow-primary/30">
@@ -188,7 +188,7 @@ const About = () => {
             <span className="text-xs font-bold tracking-widest uppercase text-primary mb-3 block">Coverage</span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">Journal Scope</h2>
             <p className="text-slate-500 text-lg max-w-2xl mx-auto">
-              We accept original research, comprehensive reviews, case studies and rapid communications across these core disciplines.
+              We accept original research, comprehensive reviews, case studies and rapid communications across these core disciplines
             </p>
           </motion.div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -252,7 +252,7 @@ const About = () => {
       <section className="py-8 px-4 bg-gradient-to-r from-primary to-emerald-500">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-2xl font-extrabold text-white mb-2">Ready to Publish Your Research?</h2>
-          <p className="text-white/80 mb-6">Join thousands of researchers who trust our journal to share their discoveries with the world.</p>
+          <p className="text-white/80 mb-6">Join thousands of researchers who trust our journal to share their discoveries with the world</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/submit" className="inline-flex items-center gap-2 bg-white text-primary px-7 py-3.5 rounded-xl font-bold hover:shadow-xl transition-all">
               Submit Manuscript <ArrowRight size={18} />

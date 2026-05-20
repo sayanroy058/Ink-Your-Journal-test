@@ -3,7 +3,19 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Mail, GraduationCap, BookOpen, Award, Users, ArrowRight } from "lucide-react";
-import figImg from "@/assets/fig.jpeg";
+import editorInChiefImg from "@/assets/Editorial Board Member/Pradeep Kumar Das (Chief Editor).jpeg";
+import asstEditorImg from "@/assets/Editorial Board Member/Koushik Mukherjee (Asst. Editor).jpeg";
+import AvikImg from "@/assets/Editorial Board Member/Avik Chowdhury.png";
+import SoumyabrataRoyImg from "@/assets/Editorial Board Member/Soumyabrata Roy.jpg.jpeg";
+import SekharPalImg from "@/assets/Editorial Board Member/sekhar pal.jpg.jpeg";
+import PieuNaskarImg from "@/assets/Editorial Board Member/piu naskar.png";
+import DurgaPrasadBarikImg from "@/assets/Editorial Board Member/Durga prasad barik.jpg.jpeg";
+import ChhandaMallickMukherjeeImg from "@/assets/Editorial Board Member/chanda mallick.jpg.jpeg";
+import AmritaBanerjeeImg from "@/assets/Editorial Board Member/amrita banerjee.jpg.jpeg";
+import ProsunTribediImg from "@/assets/Editorial Board Member/prosun tribedi.png";
+import NagendraThakurImg from "@/assets/Editorial Board Member/Nagendra-Thakur.jpg.jpeg";
+import HarekrishnaJanaImg from "@/assets/Editorial Board Member/Harekrishna-Jana.jpg.jpeg";
+
 
 const editorInChief = {
   name: "Prof. (Dr.) Pradeep Kr. Das Mohapatra",
@@ -11,7 +23,7 @@ const editorInChief = {
   department: "Professor, Dean of Science, HOD | Dept. of Microbiology",
   institution: "Raiganj University, Uttar Dinajpur, WB, India",
   achievement: "Excellence in Innovation Research, 2020-2025",
-  image: figImg,
+  image: editorInChiefImg,
   bio: "Prof. (Dr.) Pradeep Kr. Das Mohapatra serves as Professor, Dean of Science, and HOD of Microbiology at Raiganj University, West Bengal. Recognized for Excellence in Innovation Research (2020-2025), he drives pioneering microbiological research and academic leadership, fostering scientific advancement and student mentorship at the forefront of microbial sciences.",
   specializations: ["Microbial Biotechnology & Innovation", "Applied Microbiology Research", "Industrial & Environmental Microbiology", "Innovative Microbial Technologies"],
 };
@@ -22,7 +34,7 @@ const assistantEditors = [
     role: "Assistant Editor",
     department: "Assistant Professor, HOD | Dept. of Microbiology",
     institution: "Kalyani Mahavidyalaya, WB, India",
-    image: figImg,
+    image: asstEditorImg,
     bio: "Dr. Koushik Mukherjee, PhD, is Assistant Professor & HOD of Microbiology at Kalyani Mahavidyalaya, WB. He also serves as Assistant Editor, blending academic excellence with editorial expertise in microbiological sciences.",
     specializations: ["Medical Microbiology", "Microbial Pathogenesis Research", "Clinical & Diagnostic Microbiology"],
   },
@@ -43,7 +55,7 @@ const reviewers = [
     role: "Senior Reviewer",
     department: "Associate Professor | Dept. of Biosciences",
     institution: "JIS University, WB, India",
-    image: figImg,
+    image: AvikImg,
     bio: "Dr. Avik Acharya Chowdhury, PhD, is Associate Professor of Biosciences at JIS University, WB, and serves as a Senior Reviewer.",
     specializations: ["Biosciences", "Molecular Bioscience Research", "Molecular Bioscience Research"],
   },
@@ -52,7 +64,7 @@ const reviewers = [
     role: "Senior Reviewer",
     department: "Assistant  Professor | Dept. of Biosciences",
     institution: "JIS University, WB, India",
-    image: figImg,
+    image: SoumyabrataRoyImg,
     bio: "Dr. Soumyabrata Roy, PhD, is Assistant Professor of Biosciences at JIS University, WB, and serves as a Senior Reviewer.",
     specializations: ["Biosciences", "Molecular Bioscience"],
   },
@@ -60,9 +72,9 @@ const reviewers = [
     name: "Dr. Sekhar Pal, PhD",
     role: "Peer Reviewer",
     department: "Assistant Professor | Dept. of Microbiology",
-    institution: "Ramakrishna Mission Vivekananda Centenary College, WB, India",
-    image: figImg,
-    bio: "Dr. Sekhar Pal, PhD, is Assistant Professor of Microbiology at RKMVCC College, WB, and serves as a Peer Reviewer.",
+    institution: "RMKVCC, WB, India",
+    image: SekharPalImg,
+    bio: "Dr. Sekhar Pal, PhD, is Assistant Professor of Microbiology at Ramakrishna Mission Vivekananda Centenary College, WB, and serves as a Peer Reviewer.",
     specializations: ["Microbiology", "Applied Microbiology"],
   },
   {
@@ -70,7 +82,7 @@ const reviewers = [
     role: "Peer Reviewer",
     department: "Assistant  Professor, HOD | Dept. of Microbiology",
     institution: "Kulti College, WB, India",
-    image: figImg,
+    image: PieuNaskarImg,
     bio: "Dr. Pieu Naskar, PhD, is Assistant Professor & HOD of Microbiology at Kulti College, WB, India, dedicated to microbiological education and research.",
     specializations: ["Microbiology", "Environmental Microbiology", "Medical Microbiology"],
   },
@@ -82,7 +94,7 @@ const editorialMembers = [
     role: "Professor",
     department: "Department of Botany & Biotechnology",
     institution: "Ravenshaw University, Odisha, India",
-    image: figImg,
+    image: DurgaPrasadBarikImg,
     bio: "Dr. Durga Prasad Barik, PhD, is a Professor in the Department of Botany & Biotechnology at Ravenshaw University, Odisha. With years of academic excellence, he advances research in plant sciences and biotechnological innovations.",
     specializations: ["Plant Biotechnology", "Genetic Research", "Molecular Botany"],
   },
@@ -91,7 +103,7 @@ const editorialMembers = [
     role: "Assistant Professor",
     department: "Department of Bio-Medical Laboratory Science & Management",
     institution: "Vidyasagar University, WB., India",
-    image: figImg,
+    image: ChhandaMallickMukherjeeImg,
     bio: "Dr. Chhanda Mallick Mukherjee, PhD, serves as Assistant Professor in Bio-Medical Laboratory Science & Management at Vidyasagar University, WB. She contributes significantly to biomedical education and diagnostic research.",
     specializations: ["Biomedical Science", "Diagnostic Management", "Clinical Lab Science"],
   },
@@ -100,7 +112,7 @@ const editorialMembers = [
     role: "Assistant Professor (Research)",
     department: "Centre for Industrial Biotechnology Research",
     institution: "Siksha 'O' Anusandhan University, Bhubaneshwar, India",
-    image: figImg,
+    image: AmritaBanerjeeImg,
     bio: "Dr. Amrita Banerjee, PhD, is Assistant Professor (Research) at the Centre for Industrial Biotechnology Research, Siksha 'O' Anusandhan University, Bhubaneshwar. She focuses on innovative industrial biotech solutions.",
     specializations: ["Industrial Biotechnology", "Bioprocess Innovation", "Research & Development"],
   },
@@ -109,7 +121,7 @@ const editorialMembers = [
     role: "Professor and Dean Academics",
     department: "Department of Biotechnology",
     institution: "The Neotia University, WB., India",
-    image: figImg,
+    image: ProsunTribediImg,
     bio: "Dr. Prosun Tribedi, PhD, is Professor and Dean of Academics in the Department of Biotechnology at The Neotia University, WB. He leads academic strategies and biotech research initiatives.",
     specializations: ["Biotechnology", "Academic Administration", "Environmental Biotech"],
   },
@@ -118,7 +130,7 @@ const editorialMembers = [
     role: "Associate Professor, HOD",
     department: "Department of Microbiology",
     institution: "Sikkim University, India",
-    image: figImg,
+    image: NagendraThakurImg,
     bio: "Dr. Nagendra Thakur, PhD, is Associate Professor and HOD of Microbiology at Sikkim University, India. He drives microbiological research and education in the Himalayan region.",
     specializations: ["Microbial Ecology", "Applied Microbiology", "Himalayan Microbiology"],
   },
@@ -127,7 +139,7 @@ const editorialMembers = [
     role: "Assistant Professor, HOD",
     department: "Department of Microbiology",
     institution: "Raja Narendralal Khan Women's College, WB., India",
-    image: figImg,
+    image: HarekrishnaJanaImg,
     bio: "Dr. Harekrishna Jana, PhD, is Assistant Professor and HOD of Microbiology at Raja Narendralal Khan Women's College, WB. He empowers women students through quality microbiological education.",
     specializations: ["Medical Microbiology", "Academic Mentorship"],
   },
@@ -153,7 +165,7 @@ const EditorialBoard = () => {
               </span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              Meet the distinguished scholars and researchers who ensure the highest standards of research integrity and academic excellence.
+              Meet the distinguished scholars and researchers who ensure the highest standards of research integrity and academic excellence
             </p>
           </motion.div>
         </div>
@@ -427,7 +439,7 @@ const EditorialBoard = () => {
       <section className="py-6 px-4 bg-gradient-to-r from-primary to-emerald-500">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-2xl font-extrabold text-white mb-2">Interested in Joining the Editorial Board?</h2>
-          <p className="text-white/80 mb-6">We welcome applications from leading researchers worldwide. Reach out to discuss how you can contribute.</p>
+          <p className="text-white/80 mb-6">We welcome applications from leading researchers worldwide. Reach out to discuss how you can contribute</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/contact" className="inline-flex items-center gap-2 bg-white text-primary px-7 py-3.5 rounded-xl font-bold hover:shadow-xl transition-all">
               Contact Us <ArrowRight size={18} />

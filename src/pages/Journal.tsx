@@ -151,7 +151,7 @@ const Journal = () => {
               </h1>
               <p className="text-white/40 text-xs font-mono tracking-widest uppercase mb-3">ISSN: xxxx-xxxx • e-ISSN: xxxx-xxxx</p>
               <p className="text-white/70 text-base md:text-lg leading-relaxed mb-8 max-w-xl">
-                A flagship open-access journal driving innovation across biological sciences, pharmacy and allied health disciplines.
+                A flagship open-access journal driving innovation across biological sciences, pharmacy and allied health disciplines
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
                 {journalStats.map((s) => (
@@ -206,11 +206,35 @@ const Journal = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-slate-500">
                   <Filter size={14} />
-                  <span>Showing 6 of 148 articles</span>
+                  <span>Showing 0 of 0 articles</span>
                 </div>
               </div>
 
-              <div className="space-y-4">
+              <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="flex justify-center mb-12"
+          >
+            <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/15 bg-card p-8 text-center card-shadow">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-emerald-400 to-teal-400" />
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-8 ring-primary/5">
+                <BookOpen size={28} />
+              </div>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-primary">
+                Articles & Issues
+              </span>
+              <h3 className="text-2xl font-extrabold text-foreground md:text-3xl">
+                Coming Soon
+              </h3>
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Our first peer-reviewed publications are being prepared for release.
+              </p>
+            </div>
+          </motion.div>
+
+              {/* <div className="space-y-4">
                 {publishedArticles.map((article, i) => (
                   <motion.div
                     key={article.title}
@@ -246,13 +270,13 @@ const Journal = () => {
                     </div>
                   </motion.div>
                 ))}
-              </div>
+              </div> */}
 
-              <div className="text-center mt-10">
+              {/* <div className="text-center mt-10">
                 <Link to="/research" className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-xl font-bold hover:bg-primary/90 transition-all hover:shadow-lg hover:shadow-primary/25">
                   View All Articles <ArrowRight size={18} />
                 </Link>
-              </div>
+              </div> */}
             </div>
           </section>
 
@@ -263,7 +287,7 @@ const Journal = () => {
                 <span className="text-xs font-bold tracking-widest uppercase text-emerald-400 mb-3 block">Why Choose Us</span>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">Journal Features</h2>
                 <p className="text-white/60 text-lg max-w-xl mx-auto">
-                  Everything you need for a transparent, high-quality publishing experience.
+                  Everything you need for a transparent, high-quality publishing experience
                 </p>
               </motion.div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -542,7 +566,7 @@ const Journal = () => {
       <section className="py-8 px-4 bg-gradient-to-r from-primary to-emerald-500">
         <div className="container mx-auto text-center max-w-2xl">
           <h2 className="text-2xl font-extrabold text-white mb-2">Ready to Publish?</h2>
-          <p className="text-white/80 mb-6">Submit your manuscript today and reach thousands of scientists worldwide.</p>
+          <p className="text-white/80 mb-6">Submit your manuscript today and reach thousands of scientists worldwide</p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/submit" className="inline-flex items-center gap-2 bg-white text-primary px-7 py-3.5 rounded-xl font-bold hover:shadow-xl transition-all">
               Submit Manuscript <ArrowRight size={18} />

@@ -119,7 +119,7 @@ const Research = () => {
                 ISSN No.: xxxx-xxxx
               </p>
               <p className="text-primary-foreground/70 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
-                Driving Innovation in Biological Sciences & Pharmacy through rigorous, high-impact research.
+                Driving Innovation in Biological Sciences & Pharmacy through rigorous, high-impact research
               </p>
 
               {/* Stats row */}
@@ -234,11 +234,35 @@ const Research = () => {
               Published Articles
             </h2>
             <p className="text-muted-foreground text-lg">
-              Browse our latest peer-reviewed publications across biological sciences.
+              Browse our latest peer-reviewed publications across biological sciences
             </p>
           </motion.div>
 
-          <div className="space-y-4">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="flex justify-center mb-12"
+          >
+            <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/15 bg-card p-8 text-center card-shadow">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-emerald-400 to-teal-400" />
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-8 ring-primary/5">
+                <BookOpen size={28} />
+              </div>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-primary">
+                Articles & Issues
+              </span>
+              <h3 className="text-2xl font-extrabold text-foreground md:text-3xl">
+                Coming Soon
+              </h3>
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Our first peer-reviewed publications are being prepared for release.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* <div className="space-y-4">
             {publishedArticles.map((article, i) => (
               <motion.div
                 key={article.title}
@@ -272,7 +296,7 @@ const Research = () => {
                 </div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </section>}
 
@@ -410,7 +434,7 @@ const Research = () => {
             Ready to Submit Your Research?
           </h2>
           <p className="text-white/80 mb-6 max-w-xl mx-auto">
-            Join hundreds of researchers worldwide who have published their work with us.
+            Join hundreds of researchers worldwide who have published their work with us
           </p>
           <Link
             to="/#contact"

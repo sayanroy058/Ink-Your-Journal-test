@@ -50,7 +50,7 @@ const Contact = () => {
               </span>
             </h1>
             <p className="text-white/70 text-lg leading-relaxed">
-              Whether you have a question about submitting your research, peer review, or anything else — our team is ready to help.
+              Whether you have a question about submitting your research, peer review, or anything else — our team is ready to help
             </p>
           </motion.div>
         </div>
