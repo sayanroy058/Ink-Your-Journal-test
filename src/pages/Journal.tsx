@@ -232,7 +232,7 @@ const Journal = () => {
                 Our first peer-reviewed publications are being prepared for release.
               </p>
             </div>
-          </motion.div>
+              </motion.div>
 
               {/* <div className="space-y-4">
                 {publishedArticles.map((article, i) => (
@@ -537,7 +537,7 @@ const Journal = () => {
               <span className="text-xs font-bold tracking-widest uppercase text-primary mb-3 block">Archive</span>
               <h2 className="text-3xl font-extrabold text-slate-900">Volumes & Issues</h2>
             </motion.div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            {/* <div className="grid sm:grid-cols-2 gap-4">
               {volumes.map((v, i) => (
                 <motion.div
                   key={v.vol}
@@ -557,7 +557,30 @@ const Journal = () => {
                   <ArrowRight size={16} className="text-slate-300 group-hover:text-primary transition-colors" />
                 </motion.div>
               ))}
+            </div> */}
+             <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="flex justify-center mb-12"
+          >
+            <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/15 bg-card p-8 text-center card-shadow">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-emerald-400 to-teal-400" />
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-8 ring-primary/5">
+                <BookOpen size={28} />
+              </div>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-primary">
+                Articles & Issues
+              </span>
+              <h3 className="text-2xl font-extrabold text-foreground md:text-3xl">
+                Coming Soon
+              </h3>
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Our first peer-reviewed publications are being prepared for release.
+              </p>
             </div>
+            </motion.div>
           </div>
         </section>
       )}

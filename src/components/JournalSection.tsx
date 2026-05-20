@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Microscope, HeartPulse, FlaskConical, Brain, Leaf, Pill, Calendar, User } from "lucide-react";
+import { ArrowRight, Microscope, HeartPulse, FlaskConical, Brain, Leaf, Pill, Calendar, User, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import bioImg from "@/assets/istockphoto-1500469862-640x640.jpg";
 
@@ -127,7 +127,30 @@ const JournalSection = () => {
             </Link>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.45 }}
+            className="flex justify-center mb-12"
+          >
+            <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-primary/15 bg-card p-8 text-center card-shadow">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-emerald-400 to-teal-400" />
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary ring-8 ring-primary/5">
+                <BookOpen size={28} />
+              </div>
+              <span className="mb-2 block text-xs font-bold uppercase tracking-widest text-primary">
+                Articles & Issues
+              </span>
+              <h3 className="text-2xl font-extrabold text-foreground md:text-3xl">
+                Coming Soon
+              </h3>
+              <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Our first peer-reviewed publications are being prepared for release.
+              </p>
+            </div>
+            </motion.div>
+          {/* <div className="grid md:grid-cols-3 gap-6">
             {recentArticles.map((article, i) => (
               <motion.div
                 key={article.title}
@@ -151,7 +174,7 @@ const JournalSection = () => {
                 </p>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>
