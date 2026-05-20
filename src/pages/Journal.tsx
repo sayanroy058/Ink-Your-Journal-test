@@ -94,10 +94,10 @@ const features = [
 ];
 
 const volumes = [
-  { vol: "Volume 8", year: "2026", issues: 3, articles: 42 },
-  { vol: "Volume 7", year: "2025", issues: 12, articles: 148 },
-  { vol: "Volume 6", year: "2024", issues: 12, articles: 135 },
-  { vol: "Volume 5", year: "2023", issues: 12, articles: 122 },
+  { vol: "Volume 0", year: "2026", issues: 0, articles: 0 },
+  { vol: "Volume 0", year: "2025", issues: 0, articles: 0 },
+  { vol: "Volume 0", year: "2024", issues: 0, articles: 0 },
+  { vol: "Volume 0", year: "2023", issues: 0, articles: 0 },
 ];
 
 const Journal = () => {
@@ -540,7 +540,7 @@ const Journal = () => {
             <div className="grid sm:grid-cols-2 gap-4">
               {volumes.map((v, i) => (
                 <motion.div
-                  key={v.vol}
+                  key={`${v.vol}-${v.year}`}
                   initial={{ opacity: 0, y: 15 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -552,7 +552,7 @@ const Journal = () => {
                   </div>
                   <div className="flex-1">
                     <h3 className="font-bold text-slate-900 group-hover:text-primary transition-colors">{v.vol} ({v.year})</h3>
-                    <p className="text-sm text-slate-500">{v.issues} Issues · {v.articles} Articles</p>
+                    <p className="text-sm text-slate-500">{v.issues} issues &middot; {v.articles} articles</p>
                   </div>
                   <ArrowRight size={16} className="text-slate-300 group-hover:text-primary transition-colors" />
                 </motion.div>
