@@ -143,6 +143,15 @@ const editorialMembers = [
     bio: "Dr. Harekrishna Jana, PhD, is Assistant Professor and HOD of Microbiology at Raja Narendralal Khan Women's College, WB. He empowers women students through quality microbiological education.",
     specializations: ["Medical Microbiology", "Academic Mentorship"],
   },
+  {
+    name: "Dr. Koushik Mukherjee, PhD",
+    role: "Assistant Editor",
+    department: "Assistant Professor, HOD | Dept. of Microbiology",
+    institution: "Kalyani Mahavidyalaya, WB, India",
+    image: asstEditorImg,
+    bio: "Dr. Koushik Mukherjee, PhD, is Assistant Professor & HOD of Microbiology at Kalyani Mahavidyalaya, WB. He also serves as Assistant Editor, blending academic excellence with editorial expertise in microbiological sciences.",
+    specializations: ["Medical Microbiology", "Microbial Pathogenesis Research", "Clinical & Diagnostic Microbiology"],
+  },
 ];
 
 const EditorialBoard = () => {
@@ -230,8 +239,64 @@ const EditorialBoard = () => {
         </div>
       </section>
 
-      {/* Assistant Editors */}
+      {/* Editorial Board Members */}
       <section className="py-12 px-4 bg-muted/50">
+        <div className="container mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
+          >
+            <span className="text-xs font-semibold tracking-wider uppercase text-primary mb-3 block">
+              Our Experts
+            </span>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-foreground">
+              Editorial Board Members
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 max-w-8xl mx-auto">
+            {editorialMembers.map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className={`bg-card rounded-xl border border-border card-shadow hover:elevated-shadow transition-shadow overflow-hidden lg:col-span-3 ${
+                  i === 4 ? "lg:col-start-2" : ""
+                }`}
+              >
+                <div className="p-6 text-center border-b border-border">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-primary/25 ring-4 ring-emerald-500/10"
+                  />
+                  <h3 className="text-base font-bold text-foreground">{member.name}</h3>
+                  <p className="text-sm font-medium text-primary mt-1">{member.role}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{member.institution}</p>
+                </div>
+                <div className="p-6">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{member.bio}</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {member.specializations.map((spec) => (
+                      <span key={spec} className="bg-secondary text-secondary-foreground text-[11px] px-2.5 py-1 rounded-full font-medium">
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Assistant Editors */}
+      {/* <section className="py-12 px-4 bg-muted/50">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -282,7 +347,7 @@ const EditorialBoard = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Reviewers */}
       <section className="py-12 px-4 bg-white">
@@ -339,7 +404,7 @@ const EditorialBoard = () => {
       </section>
 
       {/* Editorial Members */}
-      <section className="py-12 px-4 bg-muted/50">
+      {/* <section className="py-12 px-4 bg-muted/50">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -390,7 +455,7 @@ const EditorialBoard = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Peer Review Standards */}
       <section className="py-12 px-4 bg-background">
