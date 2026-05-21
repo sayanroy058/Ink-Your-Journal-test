@@ -257,7 +257,7 @@ const EditorialBoard = () => {
             </h2>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-12 gap-8 max-w-8xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-[repeat(24,minmax(0,1fr))] gap-8 max-w-8xl mx-auto">
             {editorialMembers.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -265,8 +265,8 @@ const EditorialBoard = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`bg-card rounded-xl border border-border card-shadow hover:elevated-shadow transition-shadow overflow-hidden lg:col-span-3 ${
-                  i === 4 ? "lg:col-start-2" : ""
+                className={`bg-card rounded-xl border border-border card-shadow hover:elevated-shadow transition-shadow overflow-hidden lg:col-span-6 ${
+                  i === 4 ? "lg:col-start-4" : ""
                 }`}
               >
                 <div className="p-6 text-center border-b border-border">
