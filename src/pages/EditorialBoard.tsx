@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Mail, GraduationCap, BookOpen, Award, Users, ArrowRight } from "lucide-react";
-import editorInChiefImg from "@/assets/Editorial Board Member/Pradeep Kumar Das (Chief Editor).jpeg";
+import editorInChiefImg from "@/assets/Editorial Board Member/Pradeep Kumar Das (Chief Editor).png";
 import asstEditorImg from "@/assets/Editorial Board Member/Koushik Mukherjee (Asst. Editor).jpeg";
 import AvikImg from "@/assets/Editorial Board Member/Avik Chowdhury.png";
 import SoumyabrataRoyImg from "@/assets/Editorial Board Member/Soumyabrata Roy.jpg.jpeg";

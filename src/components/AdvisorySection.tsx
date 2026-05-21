@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import figImg from "@/assets/fig.jpeg";
-import kiratImg from "@/assets/Advisor Forum/Kirat Kumar Ganguly.jpeg";
-import pradeepImg from "@/assets/Advisor Forum/Pradeep Kumar Das (Chief Editor).jpeg";
+import kiratImg from "@/assets/Advisor Forum/Kirat Kumar Ganguly.png";
+import pradeepImg from "@/assets/Advisor Forum/Pradeep Kumar Das (Chief Editor).png";
 import koushikImg from "@/assets/Advisor Forum/Koushik Mukherjee (Asst. Editor).jpeg";
 
 const advisors = [
