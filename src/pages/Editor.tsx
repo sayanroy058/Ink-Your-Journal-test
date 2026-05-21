@@ -366,6 +366,16 @@ const Editor = () => {
                                   }}
                                   className="rounded-xl border border-slate-200 px-4 py-2 text-xs font-bold text-slate-700 transition-colors hover:border-primary hover:text-primary"
                                 >
+                                  View
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => {
+                                    setSelectedId(paper.id);
+                                    setActiveTab("edits");
+                                  }}
+                                  className="rounded-xl border border-slate-200 px-4 py-2 text-xs font-bold text-slate-700 transition-colors hover:border-primary hover:text-primary"
+                                >
                                   Edit
                                 </button>
                                 <button
