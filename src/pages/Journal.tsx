@@ -110,13 +110,13 @@ const Journal = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(220,55%,10%)] via-[hsl(220,48%,13%)] to-[hsl(168,55%,14%)] pt-28 pb-0 px-4">
-        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "28px 28px" }} />
-        <div className="absolute top-10 right-10 w-80 h-80 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-20 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative overflow-hidden bg-gradient-to-br from-[hsl(200,25%,8%)] via-[hsl(168,40%,12%)] to-[hsl(200,30%,10%)] pt-28 pb-0">
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 1px 1px, white 1px, transparent 0)", backgroundSize: "32px 32px" }} />
+        <div className="absolute top-20 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="container mx-auto relative z-10">
-          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center lg:items-end pb-12">
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-center pb-12">
             {/* Cover */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -125,11 +125,11 @@ const Journal = () => {
               className="flex-shrink-0"
             >
               <div className="relative">
-                <div className="absolute -inset-4 bg-primary/25 rounded-2xl blur-2xl" />
+                <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-xl" />
                 <img
                   src={mockupImg}
                   alt="Biological Sciences Journal"
-                  className="relative h-56 md:h-72 w-auto drop-shadow-2xl rounded-xl ring-1 ring-white/10"
+                  className="relative h-52 md:h-64 lg:h-72 w-auto drop-shadow-2xl rounded-lg"
                 />
               </div>
             </motion.div>
