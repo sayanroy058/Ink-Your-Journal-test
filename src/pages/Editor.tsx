@@ -149,10 +149,10 @@ const Editor = () => {
       currentManuscripts.map((paper) =>
         paper.id === selectedManuscript.id
           ? {
-              ...paper,
-              status: "Edits Requested",
-              editNotes: [trimmedEdit, ...paper.editNotes],
-            }
+            ...paper,
+            status: "Edits Requested",
+            editNotes: [trimmedEdit, ...paper.editNotes],
+          }
           : paper
       )
     );
@@ -164,9 +164,9 @@ const Editor = () => {
       currentManuscripts.map((paper) =>
         paper.id === paperId
           ? {
-              ...paper,
-              status: "Ready for Review",
-            }
+            ...paper,
+            status: "Ready for Review",
+          }
           : paper
       )
     );
@@ -190,11 +190,10 @@ const Editor = () => {
                 key={item.id}
                 type="button"
                 onClick={() => setActiveTab(item.id)}
-                className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-bold transition-colors ${
-                  activeTab === item.id
+                className={`flex w-full items-center gap-3 rounded-xl px-4 py-3 text-left text-sm font-bold transition-colors ${activeTab === item.id
                     ? "bg-primary text-white shadow-lg shadow-primary/20"
                     : "text-white/65 hover:bg-white/[0.08] hover:text-white"
-                }`}
+                  }`}
               >
                 <item.icon size={18} />
                 {item.label}
@@ -202,10 +201,12 @@ const Editor = () => {
             ))}
           </nav>
 
-          <div className="mt-auto rounded-2xl border border-white/10 bg-white/[0.06] p-4 text-sm text-white/60">
-            <p className="font-bold text-white">Logged in as editor</p>
-            <p>{editorProfile.email}</p>
-          </div>
+          <button
+            type="button"
+            className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-slate-800"
+          >
+            <LogOut size={17} /> Logout
+          </button>
         </aside>
 
         <main className="min-w-0 flex-1 lg:pl-72">
@@ -225,9 +226,8 @@ const Editor = () => {
                   key={item.id}
                   type="button"
                   onClick={() => setActiveTab(item.id)}
-                  className={`whitespace-nowrap rounded-xl px-4 py-2 text-xs font-bold ${
-                    activeTab === item.id ? "bg-primary text-white" : "bg-slate-100 text-slate-600"
-                  }`}
+                  className={`whitespace-nowrap rounded-xl px-4 py-2 text-xs font-bold ${activeTab === item.id ? "bg-primary text-white" : "bg-slate-100 text-slate-600"
+                    }`}
                 >
                   {item.label}
                 </button>
@@ -405,11 +405,10 @@ const Editor = () => {
                           key={paper.id}
                           type="button"
                           onClick={() => setSelectedId(paper.id)}
-                          className={`block w-full rounded-xl border p-4 text-left transition-colors ${
-                            selectedManuscript.id === paper.id
+                          className={`block w-full rounded-xl border p-4 text-left transition-colors ${selectedManuscript.id === paper.id
                               ? "border-primary bg-primary/5"
                               : "border-slate-100 bg-slate-50 hover:border-primary/30"
-                          }`}
+                            }`}
                         >
                           <div className="flex items-start justify-between gap-3">
                             <div>
@@ -512,30 +511,31 @@ const Editor = () => {
                   <p className="mt-1 text-sm text-slate-500">Editor account details, password controls and session action.</p>
                 </div>
 
-                <div className="grid gap-5 xl:grid-cols-[0.72fr_1.28fr]">
-                  <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+                <div className="max-w-8xl">
+                  {/* <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
                     <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                       <ShieldCheck size={34} />
                     </div>
                     <h3 className="mt-4 text-xl font-extrabold text-slate-950">{editorProfile.name}</h3>
                     <p className="text-sm font-bold text-primary">{editorProfile.role}</p>
-                    <button
-                      type="button"
-                      className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-slate-800"
-                    >
-                      <LogOut size={17} /> Logout
-                    </button>
-                  </div>
+                  </div> */}
 
                   <div className="space-y-5">
                     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                       <h3 className="font-extrabold text-slate-950">Profile Details</h3>
-                      <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                      <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+                        <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                          <ShieldCheck size={34} />
+                        </div>
+                        <h3 className="mt-4 text-xl font-extrabold text-slate-950">{editorProfile.name}</h3>
+                        <p className="text-sm font-bold text-primary">{editorProfile.role}</p>
+                      </div>
+                      <div className="mt-5 grid gap-4 lg:grid-cols-3">
                         {[
                           { label: "Email", value: editorProfile.email, icon: Mail },
                           { label: "Section", value: editorProfile.section, icon: BookOpenCheck },
                           { label: "Last Login", value: editorProfile.lastLogin, icon: Eye },
-                          { label: "Permissions", value: "Dashboard, Submissions, Edits, Profile", icon: ShieldCheck },
+                          // { label: "Permissions", value: "Dashboard, Submissions, Edits, Profile", icon: ShieldCheck },
                         ].map((item) => (
                           <div key={item.label} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
                             <item.icon size={18} className="text-primary" />
