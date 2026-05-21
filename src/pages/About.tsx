@@ -215,7 +215,7 @@ const About = () => {
       </section>
 
       {/* Timeline */}
-      <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800">
+      {/* <section className="section-padding bg-gradient-to-br from-slate-900 to-slate-800">
         <div className="container mx-auto max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-14">
             <span className="text-xs font-bold tracking-widest uppercase text-emerald-400 mb-3 block">Our Journey</span>
@@ -246,7 +246,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-8 px-4 bg-gradient-to-r from-primary to-emerald-500">

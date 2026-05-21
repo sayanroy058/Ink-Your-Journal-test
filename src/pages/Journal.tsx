@@ -95,9 +95,9 @@ const features = [
 
 const volumes = [
   { vol: "Volume 0", year: "2026", issues: 0, articles: 0 },
-  { vol: "Volume 0", year: "2025", issues: 0, articles: 0 },
-  { vol: "Volume 0", year: "2024", issues: 0, articles: 0 },
-  { vol: "Volume 0", year: "2023", issues: 0, articles: 0 },
+  // { vol: "Volume 0", year: "2025", issues: 0, articles: 0 },
+  // { vol: "Volume 0", year: "2024", issues: 0, articles: 0 },
+  // { vol: "Volume 0", year: "2023", issues: 0, articles: 0 },
 ];
 
 const Journal = () => {
@@ -374,12 +374,12 @@ const Journal = () => {
                 <div className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
                   <div className="text-3xl font-extrabold text-primary mb-1">0</div>
                   <p className="text-sm font-semibold text-slate-600">CiteScore</p>
-                  <p className="text-xs text-slate-400 mt-1">2025 Scopus Metrics</p>
+                  <p className="text-xs text-slate-400 mt-1">2026 Scopus Metrics</p>
                 </div>
                 <div className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
                   <div className="text-3xl font-extrabold text-primary mb-1">0</div>
                   <p className="text-sm font-semibold text-slate-600">Impact Factor</p>
-                  <p className="text-xs text-slate-400 mt-1">2025 JCR</p>
+                  <p className="text-xs text-slate-400 mt-1">2026 JCR</p>
                 </div>
                 <div className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
                   <div className="text-3xl font-extrabold text-primary mb-1">0</div>
@@ -537,7 +537,7 @@ const Journal = () => {
               <span className="text-xs font-bold tracking-widest uppercase text-primary mb-3 block">Archive</span>
               <h2 className="text-3xl font-extrabold text-slate-900">Volumes & Issues</h2>
             </motion.div>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-1">
               {volumes.map((v, i) => (
                 <motion.div
                   key={`${v.vol}-${v.year}`}
@@ -545,7 +545,7 @@ const Journal = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07 }}
-                  className="bg-slate-50 border border-slate-100 rounded-2xl p-6 flex items-center gap-4 hover:border-primary/30 hover:bg-primary/3 transition-all group cursor-pointer"
+                  className="bg-slate-50 border border-emerald-100 rounded-2xl p-6 flex items-center gap-4 hover:border-primary/30 hover:bg-primary/3 transition-all group cursor-pointer"
                 >
                   <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                     <BookOpen size={22} className="text-primary" />

@@ -7,6 +7,7 @@ import { useState } from "react";
 import mockupImg from "@/assets/life-science-mockup.png";
 import flowchartImg from "@/assets/flowchart.png";
 import figImg from "@/assets/fig.jpeg";
+import editorInChiefImg from "@/assets/Editorial Board Member/Pradeep Kumar Das (Chief Editor).png";
 
 const journalStats = [
   { label: "CiteScore", value: "0" },
@@ -202,9 +203,9 @@ const Research = () => {
             className="bg-card rounded-xl border border-border card-shadow p-6 flex items-center gap-6"
           >
             <img
-              src={figImg}
-              alt="Dr. Sarah Mitchell"
-              className="w-20 h-20 rounded-full object-cover border-4 border-secondary flex-shrink-0"
+              src={editorInChiefImg }
+              alt="Prof. (Dr.) Pradeep Kr. Das Mohapatra"
+              className="w-20 h-20 rounded-full object-cover border-4 border-primary/25 ring-4 ring-emerald-500/10 flex-shrink-0"
             />
             <div>
               <div className="text-xs font-semibold text-primary uppercase tracking-wider mb-1">Editor-in-Chief</div>
