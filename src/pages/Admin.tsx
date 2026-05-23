@@ -20,6 +20,18 @@ import {
 type AdminTab = "dashboard" | "users" | "queries" | "profile";
 type UserRole = "User" | "Reviewer" | "Editor" | "Admin";
 
+type ContactQuery = {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  institution: string;
+  subject: string;
+  status: string;
+  date: string;
+  message: string;
+};
+
 const sidebarItems: Array<{ id: AdminTab; label: string; icon: typeof BarChart3 }> = [
   { id: "dashboard", label: "Admin Dashboard", icon: BarChart3 },
   { id: "users", label: "User Management", icon: Users },
@@ -36,11 +48,55 @@ const initialUsers = [
   { id: 6, name: "Rahul Verma", email: "rahul.verma@institution.edu", role: "User" as UserRole, status: "Active" },
 ];
 
-const contactQueries = [
-  { id: "CQ-1042", name: "Arjun Patel", email: "arjun.patel@bio.edu", subject: "Submission timeline", category: "Publishing", status: "New", date: "21 May 2026" },
-  { id: "CQ-1041", name: "Dr. Lin Wei", email: "lin.wei@lab.org", subject: "Reviewer invitation", category: "Editorial", status: "In Review", date: "20 May 2026" },
-  { id: "CQ-1040", name: "Priya Shah", email: "priya.shah@pharma.edu", subject: "Article processing fee", category: "Billing", status: "Resolved", date: "19 May 2026" },
-  { id: "CQ-1039", name: "Michael Brown", email: "m.brown@research.net", subject: "Indexing information", category: "Journal", status: "Resolved", date: "18 May 2026" },
+const contactQueries: ContactQuery[] = [
+  {
+    id: "CQ-1042",
+    firstName: "Arjun",
+    lastName: "Patel",
+    email: "arjun.patel@bio.edu",
+    institution: "University of Calcutta",
+    subject: "Manuscript Submission",
+    status: "New",
+    date: "21 May 2026",
+    message:
+      "I would like to know the expected timeline after submitting an original research paper. Please share the next steps for manuscript screening and editor assignment.",
+  },
+  {
+    id: "CQ-1041",
+    firstName: "Lin",
+    lastName: "Wei",
+    email: "lin.wei@lab.org",
+    institution: "Molecular Biology Research Lab",
+    subject: "Editorial Enquiry",
+    status: "In Review",
+    date: "20 May 2026",
+    message:
+      "I received a reviewer invitation and want to confirm the scope, expected review format and final submission date for the reviewer comments.",
+  },
+  {
+    id: "CQ-1040",
+    firstName: "Priya",
+    lastName: "Shah",
+    email: "priya.shah@pharma.edu",
+    institution: "National Pharmaceutical Institute",
+    subject: "Publication Fees / APC",
+    status: "Resolved",
+    date: "19 May 2026",
+    message:
+      "Please provide the article processing charge details, payment schedule and whether any waiver is available for early career researchers.",
+  },
+  {
+    id: "CQ-1039",
+    firstName: "Michael",
+    lastName: "Brown",
+    email: "m.brown@research.net",
+    institution: "Independent Research Network",
+    subject: "Other",
+    status: "Resolved",
+    date: "18 May 2026",
+    message:
+      "I am looking for indexing information and citation database coverage for published articles in the journal.",
+  },
 ];
 
 const adminProfile = {
@@ -55,6 +111,7 @@ const Admin = () => {
   const [activeTab, setActiveTab] = useState<AdminTab>("dashboard");
   const [users, setUsers] = useState(initialUsers);
   const [showCreateUser, setShowCreateUser] = useState(false);
+  const [selectedQuery, setSelectedQuery] = useState<ContactQuery | null>(null);
   const [createUserError, setCreateUserError] = useState("");
   const [newUser, setNewUser] = useState({
     name: "",
@@ -330,30 +387,42 @@ const Admin = () => {
 
                 <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                   <div className="overflow-x-auto">
-                    <table className="w-full min-w-[820px] text-left text-sm">
+                    <table className="w-full min-w-[1120px] text-left text-sm">
                       <thead className="bg-slate-50 text-xs uppercase tracking-wider text-slate-500">
                         <tr>
                           <th className="px-5 py-4">Query ID</th>
-                          <th className="px-5 py-4">Name</th>
-                          <th className="px-5 py-4">Email</th>
+                          <th className="px-5 py-4">First Name</th>
+                          <th className="px-5 py-4">Last Name</th>
+                          <th className="px-5 py-4">Email Address</th>
+                          <th className="px-5 py-4">Institution</th>
                           <th className="px-5 py-4">Subject</th>
-                          <th className="px-5 py-4">Category</th>
                           <th className="px-5 py-4">Status</th>
                           <th className="px-5 py-4">Date</th>
+                          <th className="px-5 py-4 text-right">Action</th>
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-100">
                         {contactQueries.map((query) => (
                           <tr key={query.id} className="hover:bg-slate-50/70">
                             <td className="px-5 py-4 font-bold text-slate-900">{query.id}</td>
-                            <td className="px-5 py-4 text-slate-700">{query.name}</td>
+                            <td className="px-5 py-4 text-slate-700">{query.firstName}</td>
+                            <td className="px-5 py-4 text-slate-700">{query.lastName}</td>
                             <td className="px-5 py-4 text-slate-500">{query.email}</td>
+                            <td className="max-w-[220px] px-5 py-4 text-slate-500">{query.institution}</td>
                             <td className="px-5 py-4 font-medium text-slate-800">{query.subject}</td>
-                            <td className="px-5 py-4 text-slate-500">{query.category}</td>
                             <td className="px-5 py-4">
                               <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary">{query.status}</span>
                             </td>
                             <td className="px-5 py-4 text-slate-500">{query.date}</td>
+                            <td className="px-5 py-4 text-right">
+                              <button
+                                type="button"
+                                onClick={() => setSelectedQuery(query)}
+                                className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 px-4 py-2 text-xs font-bold text-slate-700 transition-colors hover:border-primary hover:text-primary"
+                              >
+                                <Eye size={15} /> View
+                              </button>
+                            </td>
                           </tr>
                         ))}
                       </tbody>
@@ -526,6 +595,62 @@ const Admin = () => {
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary/90"
               >
                 <Plus size={17} /> Create User
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {selectedQuery && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-md">
+          <div className="max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-white/45 bg-white/85 p-5 shadow-2xl shadow-slate-950/30 backdrop-blur-xl md:p-6">
+            <div className="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-primary">Query Details</span>
+                <h3 className="mt-2 text-2xl font-extrabold text-slate-950">{selectedQuery.subject}</h3>
+                <p className="mt-1 text-sm text-slate-500">{selectedQuery.id} - {selectedQuery.date}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => setSelectedQuery(null)}
+                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white/80 text-slate-500 transition-colors hover:border-primary hover:text-primary"
+                aria-label="Close query details popup"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {[
+                { label: "First Name", value: selectedQuery.firstName },
+                { label: "Last Name", value: selectedQuery.lastName },
+                { label: "Email Address", value: selectedQuery.email },
+                { label: "Institution / Affiliation", value: selectedQuery.institution },
+                { label: "Subject", value: selectedQuery.subject },
+                { label: "Status", value: selectedQuery.status },
+              ].map((item) => (
+                <div key={item.label} className="rounded-2xl border border-slate-100 bg-white/80 p-4">
+                  <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{item.label}</p>
+                  <p className="mt-1 font-bold text-slate-800">{item.value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 rounded-2xl border border-slate-100 bg-white/80 p-4">
+              <div className="mb-3 flex items-center gap-2">
+                <MessageSquareText size={18} className="text-primary" />
+                <p className="font-extrabold text-slate-950">Message</p>
+              </div>
+              <p className="text-sm leading-relaxed text-slate-600">{selectedQuery.message}</p>
+            </div>
+
+            <div className="mt-6 flex justify-end">
+              <button
+                type="button"
+                onClick={() => setSelectedQuery(null)}
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary/90"
+              >
+                Close
               </button>
             </div>
           </div>
