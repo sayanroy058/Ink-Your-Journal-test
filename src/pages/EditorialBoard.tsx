@@ -8,7 +8,7 @@ import asstEditorImg from "@/assets/Editorial Board Member/Koushik Mukherjee (As
 import AvikImg from "@/assets/Editorial Board Member/Avik Chowdhury.png";
 import SoumyabrataRoyImg from "@/assets/Editorial Board Member/Soumyabrata Roy.jpg.jpeg";
 import SekharPalImg from "@/assets/Editorial Board Member/sekhar pal.jpg.jpeg";
-import PieuNaskarImg from "@/assets/Editorial Board Member/piu naskar.png";
+import PieuNaskarImg from "@/assets/Editorial Board Member/piu naskar.jpeg";
 import DurgaPrasadBarikImg from "@/assets/Editorial Board Member/Durga prasad barik.jpg.jpeg";
 import ChhandaMallickMukherjeeImg from "@/assets/Editorial Board Member/chanda mallick.jpg.jpeg";
 import AmritaBanerjeeImg from "@/assets/Editorial Board Member/amrita banerjee.jpg.jpeg";
@@ -31,8 +31,8 @@ const editorInChief = {
 const assistantEditors = [
   {
     name: "Dr. Koushik Mukherjee, PhD",
-    role: "Assistant Editor",
-    department: "Assistant Professor, HOD | Dept. of Microbiology",
+    role: "Assistant Professor, HOD",
+    department: "Dept. of Microbiology",
     institution: "Kalyani Mahavidyalaya, WB, India",
     image: asstEditorImg,
     bio: "Dr. Koushik Mukherjee, PhD, is Assistant Professor & HOD of Microbiology at Kalyani Mahavidyalaya, WB. He also serves as Assistant Editor, blending academic excellence with editorial expertise in microbiological sciences.",
@@ -53,24 +53,27 @@ const reviewers = [
   {
     name: "Dr. Avik Acharya Chowdhury, PhD",
     role: "Senior Reviewer",
+    designation: "Associate Professor",
     department: "Associate Professor | Dept. of Biosciences",
     institution: "JIS University, WB, India",
     image: AvikImg,
-    bio: "Dr. Avik Acharya Chowdhury, PhD, is Associate Professor of Biosciences at JIS University, WB, and serves as a Senior Reviewer.",
+    bio: "Dr. Avik Acharya Chowdhury is an Associate Professor in the Department of Biosciences at JIS University, Kolkata, India. His research interests encompass cancer biology, autophagy-mediated signaling, tumor microenvironment, and molecular therapeutics targeting leukemia and breast cancer. He has contributed to the fields of molecular oncology and translational biosciences through publications in reputed international journals and scholarly book chapters.",
     specializations: ["Biosciences", "Molecular Bioscience Research", "Molecular Bioscience Research"],
   },
   {
-    name: "Dr. Soumyabrata Roy, PhD",
-    role: "Senior Reviewer",
-    department: "Assistant  Professor | Dept. of Biosciences",
-    institution: "JIS University, WB, India",
-    image: SoumyabrataRoyImg,
-    bio: "Dr. Soumyabrata Roy, PhD, is Assistant Professor of Biosciences at JIS University, WB, and serves as a Senior Reviewer.",
-    specializations: ["Biosciences", "Molecular Bioscience"],
+    name: "Dr. Pieu Naskar, PhD",
+    role: "Peer Reviewer",
+    designation: "Assistant Professor, HOD",
+    department: "Assistant  Professor, HOD | Dept. of Microbiology",
+    institution: "Kulti College, WB, India",
+    image: PieuNaskarImg,
+    bio: "Dr. Pieu Naskar, PhD, is Assistant Professor & HOD of Microbiology at Kulti College, WB, India, dedicated to microbiological education and research.",
+    specializations: ["Microbiology", "Environmental Microbiology", "Medical Microbiology"],
   },
   {
     name: "Dr. Sekhar Pal, PhD",
     role: "Peer Reviewer",
+    designation: "Assistant Professor",
     department: "Assistant Professor | Dept. of Microbiology",
     institution: "RMKVCC, WB, India",
     image: SekharPalImg,
@@ -78,25 +81,26 @@ const reviewers = [
     specializations: ["Microbiology", "Applied Microbiology"],
   },
   {
-    name: "Dr. Pieu Naskar, PhD",
-    role: "Peer Reviewer",
-    department: "Assistant  Professor, HOD | Dept. of Microbiology",
-    institution: "Kulti College, WB, India",
-    image: PieuNaskarImg,
-    bio: "Dr. Pieu Naskar, PhD, is Assistant Professor & HOD of Microbiology at Kulti College, WB, India, dedicated to microbiological education and research.",
-    specializations: ["Microbiology", "Environmental Microbiology", "Medical Microbiology"],
+    name: "Dr. Soumyabrata Roy, PhD",
+    role: "Senior Reviewer",
+    designation: "Assistant Professor",
+    department: "Assistant  Professor | Dept. of Biosciences",
+    institution: "JIS University, WB, India",
+    image: SoumyabrataRoyImg,
+    bio: "Dr. Soumyabrata Roy, PhD, is Assistant Professor of Biosciences at JIS University, WB, and serves as a Senior Reviewer.",
+    specializations: ["Biosciences", "Molecular Bioscience"],
   },
 ];
 
 const editorialMembers = [
   {
-    name: "Dr. Durga Prasad Barik, PhD",
-    role: "Professor",
-    department: "Department of Botany & Biotechnology",
-    institution: "Ravenshaw University, Odisha, India",
-    image: DurgaPrasadBarikImg,
-    bio: "Dr. Durga Prasad Barik, PhD, is a Professor in the Department of Botany & Biotechnology at Ravenshaw University, Odisha. With years of academic excellence, he advances research in plant sciences and biotechnological innovations.",
-    specializations: ["Plant Biotechnology", "Genetic Research", "Molecular Botany"],
+    name: "Dr. Amrita Banerjee, PhD",
+    role: "Assistant Professor (Research)",
+    department: "Centre for Industrial Biotechnology Research",
+    institution: "Siksha 'O' Anusandhan University, Bhubaneshwar, India",
+    image: AmritaBanerjeeImg,
+    bio: "Dr. Amrita Banerjee, PhD, is Assistant Professor (Research) at the Centre for Industrial Biotechnology Research, Siksha 'O' Anusandhan University, Bhubaneshwar. She focuses on innovative industrial biotech solutions.",
+    specializations: ["Industrial Biotechnology", "Bioprocess Innovation", "Research & Development"],
   },
   {
     name: "Dr. Chhanda Mallick Mukherjee, PhD",
@@ -108,31 +112,13 @@ const editorialMembers = [
     specializations: ["Biomedical Science", "Diagnostic Management", "Clinical Lab Science"],
   },
   {
-    name: "Dr. Amrita Banerjee, PhD",
-    role: "Assistant Professor (Research)",
-    department: "Centre for Industrial Biotechnology Research",
-    institution: "Siksha 'O' Anusandhan University, Bhubaneshwar, India",
-    image: AmritaBanerjeeImg,
-    bio: "Dr. Amrita Banerjee, PhD, is Assistant Professor (Research) at the Centre for Industrial Biotechnology Research, Siksha 'O' Anusandhan University, Bhubaneshwar. She focuses on innovative industrial biotech solutions.",
-    specializations: ["Industrial Biotechnology", "Bioprocess Innovation", "Research & Development"],
-  },
-  {
-    name: "Dr. Prosun Tribedi, PhD",
-    role: "Professor and Dean Academics",
-    department: "Department of Biotechnology",
-    institution: "The Neotia University, WB., India",
-    image: ProsunTribediImg,
-    bio: "Dr. Prosun Tribedi, PhD, is Professor and Dean of Academics in the Department of Biotechnology at The Neotia University, WB. He leads academic strategies and biotech research initiatives.",
-    specializations: ["Biotechnology", "Academic Administration", "Environmental Biotech"],
-  },
-  {
-    name: "Dr. Nagendra Thakur, PhD",
-    role: "Associate Professor, HOD",
-    department: "Department of Microbiology",
-    institution: "Sikkim University, India",
-    image: NagendraThakurImg,
-    bio: "Dr. Nagendra Thakur, PhD, is Associate Professor and HOD of Microbiology at Sikkim University, India. He drives microbiological research and education in the Himalayan region.",
-    specializations: ["Microbial Ecology", "Applied Microbiology", "Himalayan Microbiology"],
+    name: "Dr. Durga Prasad Barik, PhD",
+    role: "Professor",
+    department: "Department of Botany & Biotechnology",
+    institution: "Ravenshaw University, Odisha, India",
+    image: DurgaPrasadBarikImg,
+    bio: "Dr. Durga Prasad Barik, PhD, is a Professor in the Department of Botany & Biotechnology at Ravenshaw University, Odisha. With years of academic excellence, he advances research in plant sciences and biotechnological innovations.",
+    specializations: ["Plant Biotechnology", "Genetic Research", "Molecular Botany"],
   },
   {
     name: "Dr. Harekrishna Jana, PhD",
@@ -145,12 +131,30 @@ const editorialMembers = [
   },
   {
     name: "Dr. Koushik Mukherjee, PhD",
-    role: "Assistant Editor",
-    department: "Assistant Professor, HOD | Dept. of Microbiology",
+    role: "Assistant Professor, HOD",
+    department: "Dept. of Microbiology",
     institution: "Kalyani Mahavidyalaya, WB, India",
     image: asstEditorImg,
     bio: "Dr. Koushik Mukherjee, PhD, is Assistant Professor & HOD of Microbiology at Kalyani Mahavidyalaya, WB. He also serves as Assistant Editor, blending academic excellence with editorial expertise in microbiological sciences.",
     specializations: ["Medical Microbiology", "Microbial Pathogenesis Research", "Clinical & Diagnostic Microbiology"],
+  },
+  {
+    name: "Dr. Nagendra Thakur, PhD",
+    role: "Associate Professor, HOD",
+    department: "Department of Microbiology",
+    institution: "Sikkim University, India",
+    image: NagendraThakurImg,
+    bio: "Dr. Nagendra Thakur, PhD, is Associate Professor and HOD of Microbiology at Sikkim University, India. He drives microbiological research and education in the Himalayan region.",
+    specializations: ["Microbial Ecology", "Applied Microbiology", "Himalayan Microbiology"],
+  },
+  {
+    name: "Dr. Prosun Tribedi, PhD",
+    role: "Professor and Dean Academics",
+    department: "Department of Biotechnology",
+    institution: "The Neotia University, WB., India",
+    image: ProsunTribediImg,
+    bio: "Dr. Prosun Tribedi, PhD, is Professor and Dean of Academics in the Department of Biotechnology at The Neotia University, WB. He leads academic strategies and biotech research initiatives.",
+    specializations: ["Biotechnology", "Academic Administration", "Environmental Biotech"],
   },
 ];
 
@@ -222,7 +226,7 @@ const EditorialBoard = () => {
                 </div>
               </div>
               <div className="md:col-span-2 p-8">
-                <p className="text-muted-foreground leading-relaxed mb-6">{editorInChief.bio}</p>
+                <p className="text-muted-foreground leading-relaxed mb-6 text-justify">{editorInChief.bio}</p>
                 <h4 className="text-sm font-bold text-foreground mb-3 flex items-center gap-2">
                   <GraduationCap size={16} className="text-primary" /> Areas of Expertise
                 </h4>
@@ -280,7 +284,7 @@ const EditorialBoard = () => {
                   <p className="text-xs text-muted-foreground mt-0.5">{member.institution}</p>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{member.bio}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-justify">{member.bio}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {member.specializations.map((spec) => (
                       <span key={spec} className="bg-secondary text-secondary-foreground text-[11px] px-2.5 py-1 rounded-full font-medium">
@@ -384,11 +388,11 @@ const EditorialBoard = () => {
                     className="w-20 h-20 rounded-full object-cover mx-auto mb-4 border-4 border-primary/25 ring-4 ring-emerald-500/10"
                   />
                   <h3 className="text-base font-bold text-foreground">{member.name}</h3>
-                  {/* <p className="text-sm font-medium text-primary mt-1">{member.role}</p> */}
+                  <p className="text-sm font-medium text-primary mt-1">{member.designation}</p>
                   <p className="text-xs text-muted-foreground mt-0.5">{member.institution}</p>
                 </div>
                 <div className="p-6">
-                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{member.bio}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 text-justify">{member.bio}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {member.specializations.map((spec) => (
                       <span key={spec} className="bg-secondary text-secondary-foreground text-[11px] px-2.5 py-1 rounded-full font-medium">
