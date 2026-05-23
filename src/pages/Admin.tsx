@@ -6,6 +6,7 @@ import {
   ClipboardList,
   Eye,
   FileText,
+  KeyRound,
   LogOut,
   Mail,
   MessageSquareText,
@@ -13,6 +14,7 @@ import {
   ShieldCheck,
   UserCog,
   Users,
+  X,
 } from "lucide-react";
 
 type AdminTab = "dashboard" | "users" | "queries" | "profile";
@@ -53,7 +55,14 @@ const Admin = () => {
   const [activeTab, setActiveTab] = useState<AdminTab>("dashboard");
   const [users, setUsers] = useState(initialUsers);
   const [showCreateUser, setShowCreateUser] = useState(false);
-  const [newUser, setNewUser] = useState({ name: "", email: "", role: "Reviewer" as Exclude<UserRole, "User"> });
+  const [createUserError, setCreateUserError] = useState("");
+  const [newUser, setNewUser] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    role: "Reviewer" as Exclude<UserRole, "User">,
+  });
 
   const roleCounts = useMemo(
     () =>
@@ -85,7 +94,15 @@ const Admin = () => {
   };
 
   const createPrivilegedUser = () => {
-    if (!newUser.name.trim() || !newUser.email.trim()) return;
+    if (!newUser.name.trim() || !newUser.email.trim() || !newUser.password || !newUser.confirmPassword) {
+      setCreateUserError("Complete all fields before creating the user.");
+      return;
+    }
+
+    if (newUser.password !== newUser.confirmPassword) {
+      setCreateUserError("Password and confirm password must match.");
+      return;
+    }
 
     setUsers((currentUsers) => [
       ...currentUsers,
@@ -97,7 +114,8 @@ const Admin = () => {
         status: "Active",
       },
     ]);
-    setNewUser({ name: "", email: "", role: "Reviewer" });
+    setNewUser({ name: "", email: "", password: "", confirmPassword: "", role: "Reviewer" });
+    setCreateUserError("");
     setShowCreateUser(false);
   };
 
@@ -131,10 +149,12 @@ const Admin = () => {
             ))}
           </nav>
 
-          <div className="mt-auto rounded-2xl border border-white/10 bg-white/[0.06] p-4 text-sm text-white/60">
-            <p className="font-bold text-white">Logged in as</p>
-            <p>{adminProfile.email}</p>
-          </div>
+          <button
+            type="button"
+            className="mt-auto inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-slate-800"
+          >
+            <LogOut size={17} /> Logout
+          </button>
         </aside>
 
         <main className="min-w-0 flex-1 lg:pl-72">
@@ -243,45 +263,15 @@ const Admin = () => {
                   </div>
                   <button
                     type="button"
-                    onClick={() => setShowCreateUser((value) => !value)}
+                    onClick={() => {
+                      setCreateUserError("");
+                      setShowCreateUser(true);
+                    }}
                     className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary/90"
                   >
                     <Plus size={17} /> Create Admin, Editor or Reviewer
                   </button>
                 </div>
-
-                {showCreateUser && (
-                  <div className="mb-5 grid gap-3 rounded-2xl border border-primary/15 bg-white p-4 shadow-sm md:grid-cols-[1fr_1fr_180px_auto]">
-                    <input
-                      value={newUser.name}
-                      onChange={(event) => setNewUser((value) => ({ ...value, name: event.target.value }))}
-                      placeholder="Full name"
-                      className="h-11 rounded-xl border border-slate-200 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                    />
-                    <input
-                      value={newUser.email}
-                      onChange={(event) => setNewUser((value) => ({ ...value, email: event.target.value }))}
-                      placeholder="Email address"
-                      className="h-11 rounded-xl border border-slate-200 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                    />
-                    <select
-                      value={newUser.role}
-                      onChange={(event) => setNewUser((value) => ({ ...value, role: event.target.value as Exclude<UserRole, "User"> }))}
-                      className="h-11 rounded-xl border border-slate-200 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
-                    >
-                      <option>Admin</option>
-                      <option>Editor</option>
-                      <option>Reviewer</option>
-                    </select>
-                    <button
-                      type="button"
-                      onClick={createPrivilegedUser}
-                      className="h-11 rounded-xl bg-slate-950 px-5 text-sm font-bold text-white transition-colors hover:bg-slate-800"
-                    >
-                      Add User
-                    </button>
-                  </div>
-                )}
 
                 <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
                   <div className="overflow-x-auto">
@@ -376,34 +366,26 @@ const Admin = () => {
             {activeTab === "profile" && (
               <section>
                 <div className="mb-6">
-                  <span className="text-xs font-bold uppercase tracking-widest text-primary">Fourth Page</span>
+                  <span className="text-xs font-bold uppercase tracking-widest text-primary">Profile</span>
                   <h2 className="mt-2 text-3xl font-extrabold text-slate-950">Admin User Profile</h2>
-                  <p className="mt-1 text-sm text-slate-500">Admin-specific details and account actions.</p>
+                  <p className="mt-1 text-sm text-slate-500">Admin account details, password controls and session action.</p>
                 </div>
 
-                <div className="grid gap-5 xl:grid-cols-[0.72fr_1.28fr]">
-                  <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                      <ShieldCheck size={34} />
-                    </div>
-                    <h3 className="mt-4 text-xl font-extrabold text-slate-950">{adminProfile.name}</h3>
-                    <p className="text-sm font-bold text-primary">{adminProfile.role}</p>
-                    <button
-                      type="button"
-                      className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-slate-800"
-                    >
-                      <LogOut size={17} /> Logout
-                    </button>
-                  </div>
-
+                <div className="space-y-5">
                   <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
                     <h3 className="font-extrabold text-slate-950">Profile Details</h3>
-                    <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
+                      <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                        <ShieldCheck size={34} />
+                      </div>
+                      <h3 className="mt-4 text-xl font-extrabold text-slate-950">{adminProfile.name}</h3>
+                      <p className="text-sm font-bold text-primary">{adminProfile.role}</p>
+                    </div>
+                    <div className="mt-5 grid gap-4 lg:grid-cols-3">
                       {[
                         { label: "Email", value: adminProfile.email, icon: Mail },
                         { label: "Department", value: adminProfile.department, icon: ClipboardList },
                         { label: "Last Login", value: adminProfile.lastLogin, icon: Eye },
-                        { label: "Permissions", value: "Dashboard, Users, Queries, Profile", icon: ShieldCheck },
                       ].map((item) => (
                         <div key={item.label} className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
                           <item.icon size={18} className="text-primary" />
@@ -413,12 +395,142 @@ const Admin = () => {
                       ))}
                     </div>
                   </div>
+
+                  <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                    <div className="mb-5 flex items-center gap-2">
+                      <KeyRound size={18} className="text-primary" />
+                      <h3 className="font-extrabold text-slate-950">Change Password</h3>
+                    </div>
+                    <div className="grid gap-4 md:grid-cols-3">
+                      {["Current password", "New password", "Confirm password"].map((label) => (
+                        <div key={label}>
+                          <label className="mb-2 block text-sm font-bold text-slate-700">{label}</label>
+                          <input
+                            type="password"
+                            placeholder="Enter password"
+                            className="h-11 w-full rounded-xl border border-slate-200 bg-white px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <button
+                      type="button"
+                      className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary/90"
+                    >
+                      <KeyRound size={17} /> Update Password
+                    </button>
+                  </div>
                 </div>
               </section>
             )}
           </div>
         </main>
       </div>
+
+      {showCreateUser && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/55 p-4 backdrop-blur-md">
+          <div className="w-full max-w-2xl rounded-2xl border border-white/45 bg-white/85 p-5 shadow-2xl shadow-slate-950/30 backdrop-blur-xl md:p-6">
+            <div className="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-primary">Create User</span>
+                <h3 className="mt-2 text-2xl font-extrabold text-slate-950">Admin, Editor or Reviewer</h3>
+                <p className="mt-1 text-sm text-slate-500">Add a privileged account for the journal workspace.</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowCreateUser(false);
+                  setCreateUserError("");
+                }}
+                className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white/80 text-slate-500 transition-colors hover:border-primary hover:text-primary"
+                aria-label="Close create user popup"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              <div>
+                <label className="mb-2 block text-sm font-bold text-slate-700">User type</label>
+                <select
+                  value={newUser.role}
+                  onChange={(event) => setNewUser((value) => ({ ...value, role: event.target.value as Exclude<UserRole, "User"> }))}
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white/90 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                >
+                  <option>Admin</option>
+                  <option>Editor</option>
+                  <option>Reviewer</option>
+                </select>
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-bold text-slate-700">User name</label>
+                <input
+                  value={newUser.name}
+                  onChange={(event) => setNewUser((value) => ({ ...value, name: event.target.value }))}
+                  placeholder="Enter full name"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white/90 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label className="mb-2 block text-sm font-bold text-slate-700">Email</label>
+                <input
+                  value={newUser.email}
+                  onChange={(event) => setNewUser((value) => ({ ...value, email: event.target.value }))}
+                  type="email"
+                  placeholder="Enter email address"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white/90 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-bold text-slate-700">Password</label>
+                <input
+                  value={newUser.password}
+                  onChange={(event) => setNewUser((value) => ({ ...value, password: event.target.value }))}
+                  type="password"
+                  placeholder="Enter password"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white/90 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+              <div>
+                <label className="mb-2 block text-sm font-bold text-slate-700">Confirm password</label>
+                <input
+                  value={newUser.confirmPassword}
+                  onChange={(event) => setNewUser((value) => ({ ...value, confirmPassword: event.target.value }))}
+                  type="password"
+                  placeholder="Confirm password"
+                  className="h-11 w-full rounded-xl border border-slate-200 bg-white/90 px-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20"
+                />
+              </div>
+            </div>
+
+            {createUserError && (
+              <div className="mt-4 rounded-xl border border-rose-100 bg-rose-50 px-4 py-3 text-sm font-bold text-rose-700">
+                {createUserError}
+              </div>
+            )}
+
+            <div className="mt-6 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
+              <button
+                type="button"
+                onClick={() => {
+                  setShowCreateUser(false);
+                  setCreateUserError("");
+                }}
+                className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white/80 px-5 py-3 text-sm font-bold text-slate-700 transition-colors hover:border-primary hover:text-primary"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={createPrivilegedUser}
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-primary/90"
+              >
+                <Plus size={17} /> Create User
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

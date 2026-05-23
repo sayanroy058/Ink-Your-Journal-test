@@ -15,6 +15,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
 import Editor from "./pages/Editor";
+import Reviewer from "./pages/Reviewer";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
           <Route path="/register" element={<Register />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/editor" element={<Editor />} />
+          <Route path="/reviewer" element={<Reviewer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
