@@ -155,7 +155,7 @@ const SubmitPaper = () => {
       </section>
 
       {/* APC / Fees */}
-      <section className="section-padding bg-slate-50">
+      {/* <section className="section-padding bg-slate-50">
         <div className="container mx-auto max-w-3xl">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <span className="text-xs font-bold tracking-widest uppercase text-primary mb-3 block">Transparent Pricing</span>
@@ -187,7 +187,7 @@ const SubmitPaper = () => {
             <p>APC waivers and discounts are available upon request. Contact us at <strong>contact@ijink.com</strong> before submitting if you need assistance.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Submit Form CTA */}
       <section id="submit-form" className="section-padding bg-gradient-to-br from-slate-900 to-[hsl(168,45%,10%)]">
