@@ -6,6 +6,7 @@ import PublicationsTable from "@/components/user-dashboard/PublicationsTable";
 import SubmitPublicationForm from "@/components/user-dashboard/SubmitPublicationForm";
 import UserDashboardFooter from "@/components/user-dashboard/UserDashboardFooter";
 import UserDashboardNavbar from "@/components/user-dashboard/UserDashboardNavbar";
+import UserDashboardSidebar from "@/components/user-dashboard/UserDashboardSidebar";
 import UserProfilePanel from "@/components/user-dashboard/UserProfilePanel";
 import { notifications, publications } from "@/components/user-dashboard/userDashboardData";
 import type { DashboardNavItem, UserDashboardSection } from "@/components/user-dashboard/types";
@@ -21,6 +22,7 @@ const navItems: DashboardNavItem[] = [
 const UserDashboard = () => {
   const [activeSection, setActiveSection] = useState<UserDashboardSection>("overview");
   const unreadCount = notifications.filter((notification) => notification.unread).length;
+  const sidebarNavItems = navItems.filter((item) => item.id !== "notifications");
 
   const sectionContent = {
     overview: <DashboardOverview publications={publications} notifications={notifications} />,
@@ -32,16 +34,19 @@ const UserDashboard = () => {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
-      <UserDashboardNavbar
-        activeSection={activeSection}
-        navItems={navItems}
-        onSectionChange={setActiveSection}
-        unreadCount={unreadCount}
-      />
-      <main className="mx-auto min-h-[calc(100vh-134px)] max-w-7xl px-4 py-6 md:px-6 md:py-8">
-        {sectionContent[activeSection]}
-      </main>
-      <UserDashboardFooter />
+      <UserDashboardSidebar activeSection={activeSection} navItems={sidebarNavItems} onSectionChange={setActiveSection} />
+      <div className="min-w-0 lg:pl-72">
+        <UserDashboardNavbar
+          activeSection={activeSection}
+          navItems={sidebarNavItems}
+          onSectionChange={setActiveSection}
+          unreadCount={unreadCount}
+        />
+        <main className="mx-auto min-h-[calc(100vh-134px)] max-w-7xl px-4 py-6 md:px-6 md:py-8">
+          {sectionContent[activeSection]}
+        </main>
+        <UserDashboardFooter />
+      </div>
     </div>
   );
 };

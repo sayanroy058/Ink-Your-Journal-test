@@ -22,22 +22,6 @@ const UserDashboardNavbar = ({ activeSection, navItems, onSectionChange, unreadC
           </div>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => onSectionChange(item.id)}
-              className={`inline-flex items-center gap-2 rounded-xl px-3.5 py-2 text-sm font-bold transition-colors ${
-                activeSection === item.id ? "bg-primary text-white" : "text-slate-600 hover:bg-slate-100 hover:text-primary"
-              }`}
-            >
-              <item.icon size={16} />
-              {item.label}
-            </button>
-          ))}
-        </nav>
-
         <div className="flex items-center gap-2">
           <button
             type="button"
