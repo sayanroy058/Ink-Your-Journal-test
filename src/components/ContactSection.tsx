@@ -36,7 +36,7 @@ const ContactSection = () => {
         <div className="grid lg:grid-cols-5 gap-12 max-w-5xl mx-auto">
           <div className="lg:col-span-2 space-y-6">
             {[
-              { icon: Mail, label: "Email", value: "contact@ijink.com" },
+              { icon: Mail, label: "Email", value: "contact@ijfink.com" },
               { icon: Phone, label: "Phone", value: "+91 83370 75844" },
               { icon: MapPin, label: "Address", value: "RDB Boulevard, 5th Floor, Trimplin, Regus Campus, EP and GP block, Plot K-1, Sector V, Kolkata-700091 West Bengal" },
             ].map((item) => (

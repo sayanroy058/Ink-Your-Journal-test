@@ -130,7 +130,7 @@ const Footer = () => {
                 <Mail size={16} className="text-emerald-400 mt-0.5 flex-shrink-0" />
                 <div>
                   <p className="text-xs text-white/40 uppercase tracking-wide font-bold mb-0.5">Email</p>
-                  <a href="mailto:contact@ijink.com" className="text-sm text-white/70 hover:text-emerald-400 transition-colors">contact@ijink.com</a>
+                  <a href="mailto:contact@IJFINK.com" className="text-sm text-white/70 hover:text-emerald-400 transition-colors">contact@ijfink.com</a>
                 </div>
               </li>
             </ul>

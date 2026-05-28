@@ -190,7 +190,7 @@ const Register = () => {
                 <h2 className="mb-5 max-w-xl text-4xl font-extrabold leading-[0.95] text-white md:text-6xl">
                   Join {" "}
                   <span className="bg-gradient-to-r from-emerald-400 to-teal-300 bg-clip-text text-transparent">
-                    IJINK
+                    IJFINK Research Community
                   </span>
                 </h2>
                 <p className="max-w-lg text-lg leading-relaxed text-white/70">

@@ -43,7 +43,7 @@ const initialUsers = [
   { id: 1, name: "Dr. Sarah Mitchell", email: "sarah.mitchell@journal.org", role: "Editor" as UserRole, status: "Active" },
   { id: 2, name: "Prof. Rakesh Sen", email: "rakesh.sen@review.edu", role: "Reviewer" as UserRole, status: "Active" },
   { id: 3, name: "Ananya Das", email: "ananya.das@research.edu", role: "User" as UserRole, status: "Inactive" },
-  { id: 4, name: "Admin Operations", email: "admin@ijink.com", role: "Admin" as UserRole, status: "Active" },
+  { id: 4, name: "Admin Operations", email: "admin@ijfink.com", role: "Admin" as UserRole, status: "Active" },
   { id: 5, name: "Dr. Meera Kapoor", email: "meera.kapoor@journal.org", role: "Editor" as UserRole, status: "Active" },
   { id: 6, name: "Rahul Verma", email: "rahul.verma@institution.edu", role: "User" as UserRole, status: "Active" },
 ];
@@ -101,7 +101,7 @@ const contactQueries: ContactQuery[] = [
 
 const adminProfile = {
   name: "Admin Operations",
-  email: "admin@ijink.com",
+  email: "admin@IJFINK.com",
   role: "Super Admin",
   department: "Journal Administration",
   lastLogin: "21 May 2026, 04:10 PM",
