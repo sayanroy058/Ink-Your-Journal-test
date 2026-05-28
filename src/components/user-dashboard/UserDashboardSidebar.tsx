@@ -1,4 +1,3 @@
-import { BookOpenCheck } from "lucide-react";
 import type { DashboardNavItem, UserDashboardSection } from "./types";
 
 type UserDashboardSidebarProps = {
@@ -9,17 +8,7 @@ type UserDashboardSidebarProps = {
 
 const UserDashboardSidebar = ({ activeSection, navItems, onSectionChange }: UserDashboardSidebarProps) => {
   return (
-    <aside className="fixed inset-y-0 left-0 z-30 hidden w-72 border-r border-white/10 bg-gradient-to-b from-[hsl(220,55%,10%)] via-[hsl(220,48%,13%)] to-[hsl(168,55%,14%)] p-5 text-white lg:flex lg:flex-col">
-      <div className="mb-8 rounded-2xl border border-white/10 bg-white/[0.06] p-4">
-        <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary text-white">
-          <BookOpenCheck size={21} />
-        </div>
-        <h1 className="mt-4 text-xl font-extrabold">Publisher Panel</h1>
-        <p className="mt-1 text-sm leading-relaxed text-white/55">
-          International Journal for Invention of Nobel Knowledge publishing workspace.
-        </p>
-      </div>
-
+    <aside className="fixed bottom-0 left-0 top-[76px] z-30 hidden w-72 border-r border-white/10 bg-gradient-to-b from-[hsl(220,55%,10%)] via-[hsl(220,48%,13%)] to-[hsl(168,55%,14%)] p-5 text-white lg:flex lg:flex-col">
       <nav className="space-y-2">
         {navItems.map((item) => (
           <button

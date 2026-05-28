@@ -35,13 +35,13 @@ const UserDashboard = () => {
   return (
     <div className="min-h-screen bg-slate-100 text-slate-900">
       <UserDashboardSidebar activeSection={activeSection} navItems={sidebarNavItems} onSectionChange={setActiveSection} />
+      <UserDashboardNavbar
+        activeSection={activeSection}
+        navItems={sidebarNavItems}
+        onSectionChange={setActiveSection}
+        unreadCount={unreadCount}
+      />
       <div className="min-w-0 lg:pl-72">
-        <UserDashboardNavbar
-          activeSection={activeSection}
-          navItems={sidebarNavItems}
-          onSectionChange={setActiveSection}
-          unreadCount={unreadCount}
-        />
         <main className="mx-auto min-h-[calc(100vh-134px)] max-w-7xl px-4 py-6 md:px-6 md:py-8">
           {sectionContent[activeSection]}
         </main>
